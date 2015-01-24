@@ -27,3 +27,9 @@
 *.i*86
 *.x86_64
 *.hex
+
+build
+exec_once
+vhash
+voba_str
+voba_value

@@ -9,7 +9,7 @@ DRONE_BUILD_NUMBER=$DRONE_BUILD_NUMBER
 DRONE_COMMIT=$DRONE_COMMIT
 DRONE_BRANCH=$DRONE_BRANCH
 JOB_NAME=$JOB_NAME
-WORKSPACE: the=$WORKSPACE: the
+WORKSPACE=$WORKSPACE
 BUILD_URL=$BUILD_URL
 BUILD_DIR=$BUILD_DIR
 BUILD_ID=$BUILD_ID
@@ -35,7 +35,10 @@ make &&  make test && make install || exit 1
 cd ..
 
 # http://docs.drone.io/cpp.html, I need c++-11 features.
-# echo 2 | sudo update-alternatives --config gcc
+if [ ! x$WORKSPACE == x"" ]; then
+   echo 2 | sudo update-alternatives --config gcc
+fi
+
 git clone $MY_GIT/vhash.git vhash
 cd vhash
 make &&  make test && make install || exit 1

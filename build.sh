@@ -19,6 +19,7 @@ SVN_REVISION=$SVN_REVISION
 EOF
 
 
+
 set -e
 
 if [ -d /home/git.repository/voba.good ]; then
@@ -27,16 +28,22 @@ else
     export MY_GIT=http://github.com/wcy123
 fi
 
-
-
 git clone $MY_GIT/exec_once.git exec_once
 cd exec_once
 make &&  make test && make install || exit 1
 cd ..
 
-# http://docs.drone.io/cpp.html, I need c++-11 features.
+
 if [ ! x$WORKSPACE == x"" ]; then
-   echo 2 | sudo update-alternatives --config gcc
+    # http://docs.drone.io/cpp.html, I need c++-11 features.
+    echo 2 | sudo update-alternatives --config gcc
+    cd /tmp
+    wget http://www.hboehm.info/gc/gc_source/gc-7.4.2.tar.gz
+    wget http://www.ivmaisoft.com/_bin/atomic_ops/libatomic_ops-7.4.2.tar.gz
+    tar -xzvf libatomic_ops-7.4.2.tar.gz 
+    tar -xzvf gc-7.4.2.tar.gz
+    (CC=gcc;cd gc-7.4.2 && ln -s ../libatomic_ops-7.4.2/ libatomic_ops && ./configure --enable-shared=yes --enable-static=no --prefix=/usr && make && sudo -E make install)
+    cd $WORKSPACE
 fi
 
 git clone $MY_GIT/vhash.git vhash

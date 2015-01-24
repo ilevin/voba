@@ -2,10 +2,13 @@
 
 set -e
 
+if [ -d /home/git.repository/voba.good ]; then
+    export MY_GIT=/home/git.repository/voba.good
+else
+    export MY_GIT=http://github.com/wcy123
+fi
 
 
-# export MY_GIT=http://github.com/wcy123
-export MY_GIT=/home/git.repository/voba.good
 
 git clone $MY_GIT/exec_once.git exec_once
 cd exec_once

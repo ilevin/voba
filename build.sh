@@ -62,3 +62,8 @@ cd voba_value
 make &&  make test && make install || exit 1
 cd ..
 
+git clone $MY_GIT/voba_module.git voba_module
+cd voba_module
+make &&  make test && make install || exit 1
+cd ..
+

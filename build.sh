@@ -73,3 +73,9 @@ make &&  make test && make install || exit 1
 cd ..
 
 
+git clone $MY_GIT/voba_compiler.git voba_compiler
+cd voba_compiler
+make &&  make test && make install || exit 1
+cd ..
+
+

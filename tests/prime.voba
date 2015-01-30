@@ -1,0 +1,20 @@
+(import builtin)
+(def primes (array))
+(<< primes 2)
+(def (is-prime x)
+     (for :init true
+          :each primes
+          :do ((v |
+                  (== (% x v) 0)
+                  ;;(eq_i32_mod_0 x v)
+                  )
+               (break false)
+                )))
+(for :each (range 2 100000)
+     :do
+     ((v | (is-prime v))
+      (<< primes v))
+     )
+;(print primes)
+(print (len primes))
+

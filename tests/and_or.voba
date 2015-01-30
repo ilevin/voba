@@ -1,0 +1,6 @@
+(import builtin)
+(def v false)
+;; (and v (+ 1 it) (print it) (print it) 100)
+;; (print it)
+1
+(or v (print it))

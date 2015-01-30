@@ -1,0 +1,10 @@
+(import builtin)
+1
+(print
+ (+ it 1)
+ (+ it 2))
+2
+(let ((a it))
+  (+ it 2)
+  (+ it 19))
+(print  it "good")

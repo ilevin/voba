@@ -1,0 +1,22 @@
+# directories
+srcdir = $(PWD)
+INSTALL = /usr/bin/install -c
+INSTALLDATA = /usr/bin/install -c -m 644
+bindir = $(prefix)/bin
+infodir = $(prefix)/info
+libdir = $(prefix)/lib
+includedir = $(prefix)/include
+dirs = $(prefix) $(libdir) $(includedir) $(bindir)
+
+# c compiler flags
+CFLAGS += -std=c99
+CFLAGS += -Wall
+CFLAGS += -Werror
+CFLAGS += -I $(includedir)
+# c++ compiler flags
+CXXFLAGS += -I $(includedir)
+
+OBJS = $(patsubst %.c,%.o,$(SRCS_C)) $(patsubst %.cc,%.o,$(SRCS_CC))
+
+
+

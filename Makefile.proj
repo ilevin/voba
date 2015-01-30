@@ -1,0 +1,32 @@
+CFLAGS += -I $(libdir)
+
+LDFLAGS += -ldl
+LDFLAGS += -lexec_once
+LDFLAGS += -lvoba_value
+LDFLAGS += -lvoba_module
+LDFLAGS += -L$(libdir)
+
+TEST_VOBA_FILES = $(wildcard tests/*.voba)
+VOBA_C_FILES := $(patsubst %.voba,%.c,$(TEST_VOBA_FILES))
+VOBA_C_O := $(patsubst tests/%.voba,tests/%.o,$(TEST_VOBA_FILES))
+VOBA_C_SO := $(patsubst tests/%.voba,tests/lib%.so,$(TEST_VOBA_FILES))
+CLEANED_FILES += $(VOBA_C_FILES) $(VOBA_C_SO)
+all: $(VOBA_C_SO)
+VOBA_C_SO_RUN := $(patsubst tests/%.voba,run/%,$(TEST_VOBA_FILES))
+$(VOBA_C_FILES): %.c: %.voba
+	bash -x setenv.sh ./vobac $< > $@
+$(VOBA_C_FILES): %.c: ./vobac
+$(VOBA_C_SO): tests/lib%.so: tests/%.o
+	$(CC) -shared -Wl,-soname,$@  -o $@ $<
+$(VOBA_C_O): tests/%.o: tests/%.c
+	$(CC) -c -o $@ -fPIC $(CFLAGS) $<
+$(VOBA_C_SO_RUN): run/% : tests/lib%.so 
+	bash setenv.sh time ./voba ./$<
+.PHONY: $(VOBA_C_SO_RUN)
+
+test: $(VOBA_C_SO_RUN)
+
+# Local Variables:
+# mode:makefile
+# coding: utf-8-unix
+# End:

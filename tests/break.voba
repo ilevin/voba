@@ -1,0 +1,10 @@
+(import builtin)
+(let ((v (for :each (range 0 10)
+              :init 0
+              :if (fun (x) (== (% x 2) 0))
+              :accumulate +
+              :do
+              ((v | (> v 5)) (break "hello"))
+              (v (print v) v))))
+  (print v))
+     

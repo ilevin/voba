@@ -15,7 +15,7 @@ all: build $(VOBA_C_SO)
 
 .PHONY: build
 build:
-	sh -x build.sh
+	env bash -x build.sh
 VOBA_C_SO_RUN := $(patsubst tests/%.voba,run/%,$(TEST_VOBA_FILES))
 $(VOBA_C_FILES): %.c: %.voba
 	bash -x setenv.sh voba_compiler/vobac $< > $@

@@ -30,10 +30,10 @@ fi
 
 if [ ! -d exec_once ]; then
     git clone $MY_GIT/exec_once.git exec_once
-    cd exec_once
-    make &&  make test && make install || exit 1
-    cd ..
 fi
+cd exec_once
+make &&  make test && make install || exit 1
+cd ..
 
 
 if [ ! x$WORKSPACE == x"" ]; then
@@ -50,45 +50,49 @@ fi
 
 if [ ! -d vhash ] ; then
     git clone $MY_GIT/vhash.git vhash
-    cd vhash
-    make &&  make test && make install || exit 1
-    cd ..
 fi
+cd vhash
+make &&  make test && make install || exit 1
+cd ..
 
 if [ ! -d voba_str ]; then
     git clone $MY_GIT/voba_str.git voba_str
-    cd voba_str
-    make &&  make test && make install || exit 1
-    cd ..
 fi
+cd voba_str
+make &&  make test && make install || exit 1
+cd ..
+
 
 if [ ! -d voba_value ]; then
     git clone $MY_GIT/voba_value.git voba_value
-    cd voba_value
-    make &&  make test && make install || exit 1
-    cd ..
 fi
+cd voba_value
+make &&  make test && make install || exit 1
+cd ..
 
 if [ ! -d voba_module ]; then
     git clone $MY_GIT/voba_module.git voba_module
-    cd voba_module
-    make &&  make test && make install || exit 1
-    cd ..
 fi
+cd voba_module
+make &&  make test && make install || exit 1
+cd ..
+
 
 if [ ! -d voba_builtin ]; then
     git clone $MY_GIT/voba_builtin.git voba_builtin
-    cd voba_builtin
-    make &&  make test && make install || exit 1
-    cd ..
 fi
+cd voba_builtin
+make &&  make test && make install || exit 1
+cd ..
+
 
 if [ ! -d voba_compiler ]; then
     git clone $MY_GIT/voba_compiler.git voba_compiler
-    cd voba_compiler
-    make &&  make test && make install || exit 1
-    cd ..
 fi
+cd voba_compiler
+make &&  make test && make install || exit 1
+cd ..
+
 
     
 

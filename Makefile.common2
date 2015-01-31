@@ -20,7 +20,7 @@ $(dirs): % :
 ### clean up  ###
 .PHONY: all clean
 clean:
-	-rm *.o $(CLEANED_FILES) 2>/dev/null
+	-rm -fr *.o $(CLEANED_FILES) 2>/dev/null
 
 .DELETE_ON_ERROR:
 

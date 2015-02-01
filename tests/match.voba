@@ -1,3 +1,2 @@
-(import builtin)
 (print (match 1
        ((v | (== 1 v)) "good")))

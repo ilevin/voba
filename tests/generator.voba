@@ -1,4 +1,3 @@
-(import builtin)
 (def (return1 a)
      (print "hello" a)
      (let ((b (yield (+ 1 a))))

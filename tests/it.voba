@@ -1,4 +1,3 @@
-(import builtin)
 1
 (print
  (+ it 1)

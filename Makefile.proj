@@ -24,7 +24,7 @@ $(VOBA_C_SO): tests/lib%.so: tests/%.o
 $(VOBA_C_O): tests/%.o: tests/%.c
 	$(CC) -c -o $@ -fPIC $(CFLAGS) $<
 $(VOBA_C_SO_RUN): run/% : tests/lib%.so 
-	bash -x setenv.sh time ./voba_compiler/voba ./$<
+	bash -x setenv.sh ./voba_compiler/voba ./$<
 .PHONY: $(VOBA_C_SO_RUN)
 
 test: $(VOBA_C_SO_RUN)

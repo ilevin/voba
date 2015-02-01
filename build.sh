@@ -20,8 +20,6 @@ CFLAGS=$CFLAGS
 LDFLAGS=$LDFLAGS
 EOF
 
-unset CFLAGS
-unset LDFLAGS
 
 set -e
 

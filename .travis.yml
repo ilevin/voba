@@ -9,7 +9,7 @@ before_script:
   - if [ "$CC" == "g++" ]; then sudo apt-get install -qq g++-4.8; fi
   - if [ "$CXX" == "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
   - set
-  - which $CXX
+  - echo "a" $CXX "a"
   - $CXX --version
   # clang not system wide, fail on sudo install, workaround
   - export CC=`which $CC`

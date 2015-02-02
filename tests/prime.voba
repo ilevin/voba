@@ -9,7 +9,7 @@
                   )
                (break false)
                 )))
-(for :each (range 2 100000)
+(for :each (range 2 10000)
      :do
      ((v | (is-prime v))
       (<< primes v))

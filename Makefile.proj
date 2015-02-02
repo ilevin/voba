@@ -10,11 +10,8 @@ VOBA_C_FILES := $(patsubst %.voba,%.c,$(TEST_VOBA_FILES))
 VOBA_C_O := $(patsubst tests/%.voba,tests/%.o,$(TEST_VOBA_FILES))
 VOBA_C_SO := $(patsubst tests/%.voba,tests/lib%.so,$(TEST_VOBA_FILES))
 CLEANED_FILES += $(VOBA_C_FILES) $(VOBA_C_SO) exec_once vhash voba_builtin voba_compiler voba_module voba_str voba_value
-all: build_all $(VOBA_C_SO)
+all: $(VOBA_C_SO)
 
-.PHONY: build_all
-build_all:
-	env bash -x build.sh
 VOBA_C_SO_RUN := $(patsubst tests/%.voba,run/%,$(TEST_VOBA_FILES))
 $(VOBA_C_FILES): %.c: %.voba
 	bash -x setenv.sh voba_compiler/vobac $< > $@

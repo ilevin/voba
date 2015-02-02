@@ -2,7 +2,7 @@ language: cpp
 compiler:
   - gcc
 script:  
-   - bash -x build.sh && make && make test && make install
+   - bash -x build.sh && make test 
 before_script:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -qq

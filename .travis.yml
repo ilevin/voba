@@ -7,9 +7,9 @@ before_script:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -qq
   - if [ "$CXX" == "g++" ]; then sudo apt-get install -qq g++-4.8; fi
+  - if [ "$CXX" == "g++" ]; then export LDFLAGS=-Wl,--no-as-needed; fi
   - if [ "$CXX" == "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
-  - set
-  - echo "a" $CXX "a"
+  - which $CXX
   - $CXX --version
   # clang not system wide, fail on sudo install, workaround
   - export CC=`which $CC`

@@ -1,15 +1,18 @@
 language: c
 compiler:
   - gcc
-  - clang
-script:  bash -x build.sh && make && make test && make install
-
+script:  
+   - bash -x build.sh && make && make test && make install
 before_script:
-   # clang not system wide, fail on sudo install, workaround
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - sudo apt-get update -qq
+  - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+  # clang not system wide, fail on sudo install, workaround
   - export CC=`which $CC`
   - wget http://www.hboehm.info/gc/gc_source/gc-7.4.2.tar.gz
   - wget http://www.ivmaisoft.com/_bin/atomic_ops/libatomic_ops-7.4.2.tar.gz
   - tar -xzvf libatomic_ops-7.4.2.tar.gz 
   - tar -xzvf gc-7.4.2.tar.gz
   - (CC=gcc;cd gc-7.4.2 && ln -s ../libatomic_ops-7.4.2/ libatomic_ops && ./configure --enable-shared=yes --enable-static=no --prefix=/usr && make && sudo -E make install)
-    
+   

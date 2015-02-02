@@ -37,9 +37,9 @@ make &&  make test && make install || exit 1
 cd ..
 
 
-if [ ! x$WORKSPACE == x"" ]; then
+if [ ! -f /usr/include/gc.h ]; then
     # http://docs.drone.io/cpp.html, I need c++-11 features.
-    echo 2 | sudo update-alternatives --config gcc
+    #echo 2 | sudo update-alternatives --config gcc
     cd /tmp
     (wget http://www.hboehm.info/gc/gc_source/gc-7.4.2.tar.gz
     wget http://www.ivmaisoft.com/_bin/atomic_ops/libatomic_ops-7.4.2.tar.gz

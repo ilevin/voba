@@ -1,0 +1,6 @@
+define voba_type
+    print ((voba_cls_t*) voba_user_data_base(voba_get_class($arg0)))->name
+end
+define voba_print
+    print voba_apply(voba_symbol_value(s_print),voba_make_tuple_1_x($arg0))
+end

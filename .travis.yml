@@ -8,6 +8,8 @@ before_script:
   - sudo apt-get update -qq
   - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+  - which $CXX
+  - $CXX --version
   # clang not system wide, fail on sudo install, workaround
   - export CC=`which $CC`
   - wget http://www.hboehm.info/gc/gc_source/gc-7.4.2.tar.gz

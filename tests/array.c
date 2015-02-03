@@ -1,7 +1,7 @@
 #include <stdint.h>
 #include <assert.h>
 #define EXEC_ONCE_TU_NAME "TODO ADD "
-#define EXEC_ONCE_DEPENDS {"voba.module",NULL};
+#define EXEC_ONCE_DEPENDS {"voba.module"};
 #include <voba/value.h>
 #include <voba/core/builtin.h> // import builtin by default
 #include <exec_once.h>
@@ -9,31 +9,31 @@
 #define voba_match_eq voba_eql
 static voba_value_t gf_match __attribute__((unused)) = VOBA_UNDEF;
 static voba_value_t gf_iter __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t get_class_c0b1a6 /* get_class */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t str_c0b296 /* str */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t print_c0b396 /* print */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t len_c0b486 /* len */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t range_c0b2c6 /* range */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t _2B_c0b686 /* + */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t _3E_c0b776 /* > */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t _3C_c0b866 /* < */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t _3E_3D_c0b9e6 /* >= */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t _3C_3D_c0bad6 /* <= */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t _3D_3D_c0bbc6 /* == */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t _25_c0bcb6 /* % */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t _3C_3C_c0bda6 /* << */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t array_c0be96 /* array */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t eq_c0bf86 /* eq */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t i32_mod_c0c076 /* i32_mod */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t eq_i32_mod_0_c0c1f6 /* eq_i32_mod_0 */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t cls_i8_c0c2e6 /* cls_i8 */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t cls_i16_c0c3d6 /* cls_i16 */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t cls_i32_c0c4c6 /* cls_i32 */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t cls_u8_c0c5b6 /* cls_u8 */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t cls_u16_c0c6a6 /* cls_u16 */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t cls_u32_c0c796 /* cls_u32 */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t cls_float_c0c886 /* cls_float */ __attribute__((unused)) = VOBA_UNDEF;
-    voba_value_t cls_str_c0c976 /* cls_str */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t get_class_206e2a6 /* get_class */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t str_206e396 /* str */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t print_206e496 /* print */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t len_206e586 /* len */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t range_206e3c6 /* range */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t _2B_206e786 /* + */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t _3E_206e876 /* > */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t _3C_206e966 /* < */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t _3E_3D_206eae6 /* >= */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t _3C_3D_206ebd6 /* <= */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t _3D_3D_206ecc6 /* == */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t _25_206edb6 /* % */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t _3C_3C_206eea6 /* << */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t array_206ef96 /* array */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t eq_206f086 /* eq */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t i32_mod_206f176 /* i32_mod */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t eq_i32_mod_0_206f2f6 /* eq_i32_mod_0 */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t cls_i8_206f3e6 /* cls_i8 */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t cls_i16_206f4d6 /* cls_i16 */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t cls_i32_206f5c6 /* cls_i32 */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t cls_u8_206f6b6 /* cls_u8 */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t cls_u16_206f7a6 /* cls_u16 */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t cls_u32_206f896 /* cls_u32 */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t cls_float_206f986 /* cls_float */ __attribute__((unused)) = VOBA_UNDEF;
+    voba_value_t cls_str_206fa76 /* cls_str */ __attribute__((unused)) = VOBA_UNDEF;
     voba_value_t const_array_2 __attribute__((unused)) = VOBA_UNDEF; /* var for constant*/
 #ifndef VOBA_MODULE_DIRTY_HACK
 voba_value_t voba_init(voba_value_t this_module)
@@ -77,88 +77,97 @@ EXEC_ONCE_PROGN {
          NULL
     };
     fprintf(stderr,"loading %s(%s)\n",name,id);
-    voba_import_module(name,id,symbols);
+    static voba_value_t                                    
+        symbols2[sizeof(symbols)/sizeof(const char*)] = {           
+        sizeof(symbols)/sizeof(const char*) - 1, VOBA_NIL,          
+    };                                                              
+    for(size_t i = 0 ; symbols[i]!=NULL; ++i){                      
+        symbols2[i+1] =                                             
+            voba_make_string(                                       
+                    voba_str_from_cstr(symbols[i]));                
+    }                                                               
+    voba_import_module(name,id,voba_make_tuple(symbols2));          
 }
 {
-    gf_match = voba_module_var("__lang__","__lang__","__match__");
+    gf_match = voba_module_var("__lang__","__lang__",voba_make_string(voba_str_from_cstr("__match__")));
 }
 {
-    gf_iter = voba_module_var("__lang__","__lang__","__iter__");
+    gf_iter = voba_module_var("__lang__","__lang__",voba_make_string(voba_str_from_cstr("__iter__")));
 }
 {
-    get_class_c0b1a6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","get_class");
+    get_class_206e2a6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("get_class")));
 }
 {
-    str_c0b296 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","str");
+    str_206e396 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("str")));
 }
 {
-    print_c0b396 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","print");
+    print_206e496 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("print")));
 }
 {
-    len_c0b486 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","len");
+    len_206e586 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("len")));
 }
 {
-    range_c0b2c6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","range");
+    range_206e3c6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("range")));
 }
 {
-    _2B_c0b686 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","+");
+    _2B_206e786 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("+")));
 }
 {
-    _3E_c0b776 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",">");
+    _3E_206e876 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr(">")));
 }
 {
-    _3C_c0b866 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","<");
+    _3C_206e966 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("<")));
 }
 {
-    _3E_3D_c0b9e6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",">=");
+    _3E_3D_206eae6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr(">=")));
 }
 {
-    _3C_3D_c0bad6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","<=");
+    _3C_3D_206ebd6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("<=")));
 }
 {
-    _3D_3D_c0bbc6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","==");
+    _3D_3D_206ecc6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("==")));
 }
 {
-    _25_c0bcb6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","%");
+    _25_206edb6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("%")));
 }
 {
-    _3C_3C_c0bda6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","<<");
+    _3C_3C_206eea6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("<<")));
 }
 {
-    array_c0be96 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","array");
+    array_206ef96 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("array")));
 }
 {
-    eq_c0bf86 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","eq");
+    eq_206f086 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("eq")));
 }
 {
-    i32_mod_c0c076 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","i32_mod");
+    i32_mod_206f176 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("i32_mod")));
 }
 {
-    eq_i32_mod_0_c0c1f6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","eq_i32_mod_0");
+    eq_i32_mod_0_206f2f6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("eq_i32_mod_0")));
 }
 {
-    cls_i8_c0c2e6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","cls_i8");
+    cls_i8_206f3e6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("cls_i8")));
 }
 {
-    cls_i16_c0c3d6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","cls_i16");
+    cls_i16_206f4d6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("cls_i16")));
 }
 {
-    cls_i32_c0c4c6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","cls_i32");
+    cls_i32_206f5c6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("cls_i32")));
 }
 {
-    cls_u8_c0c5b6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","cls_u8");
+    cls_u8_206f6b6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("cls_u8")));
 }
 {
-    cls_u16_c0c6a6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","cls_u16");
+    cls_u16_206f7a6 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("cls_u16")));
 }
 {
-    cls_u32_c0c796 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","cls_u32");
+    cls_u32_206f896 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("cls_u32")));
 }
 {
-    cls_float_c0c886 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","cls_float");
+    cls_float_206f986 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("cls_float")));
 }
 {
-    cls_str_c0c976 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a","cls_str");
+    cls_str_206fa76 = voba_module_var("builtin","28b4792c-366b-11e4-aa00-08002796644a",voba_make_string(voba_str_from_cstr("cls_str")));
 }
     voba_value_t const_tuple_in_c_3 [] = { 3,voba_make_i32(1),voba_make_i32(2),voba_make_i32(3)};
     const_array_2 = voba_array_from_tuple(voba_make_tuple(const_tuple_in_c_3)); /* constant */
@@ -187,22 +196,22 @@ EXEC_ONCE_PROGN {
     /*for body begin*/
     /* match pattern 1 start*/
         /*empty label*/ {
-            voba_value_t v_c08486 /* v */ __attribute__((unused)) = VOBA_UNDEF;
-            /* start to match the single variable v_c08486 */
-            if(voba_eq(v_c08486,VOBA_UNDEF)){
-                v_c08486 = for_each_value_9; /* when v_c08486 is unbound, bound it*/
+            voba_value_t v_206b586 /* v */ __attribute__((unused)) = VOBA_UNDEF;
+            /* start to match the single variable v_206b586 */
+            if(voba_eq(v_206b586,VOBA_UNDEF)){
+                v_206b586 = for_each_value_9; /* when v_206b586 is unbound, bound it*/
             }else{
-                 /* when v_c08486 is already bound, try to test whether equal*/
-                 if(!voba_match_eq(v_c08486,for_each_value_9)){
+                 /* when v_206b586 is already bound, try to test whether equal*/
+                 if(!voba_match_eq(v_206b586,for_each_value_9)){
                       goto for_each_end_5;/*if not equal goto the fail lable */
                  }
             }
-            /* end to match the single variable v_c08486*/
+            /* end to match the single variable v_206b586*/
                 voba_value_t apply_ret_16 __attribute__((unused)) = VOBA_UNDEF;/* return value for apply */
                 voba_value_t apply_args_17 [] = { 1 /* prepare arguments for apply */
-                     ,v_c08486 /* v */ /* argument 1 */
+                     ,v_206b586 /* v */ /* argument 1 */
                 };
-                apply_ret_16 = voba_apply(voba_symbol_value(print_c0b396 /* print */),voba_make_tuple(apply_args_17));/* return value for apply */
+                apply_ret_16 = voba_apply(voba_symbol_value(print_206e496 /* print */),voba_make_tuple(apply_args_17));/* return value for apply */
         
             for_each_output_12 = apply_ret_16; /* match statement return value*/
             goto for_each_end_5; // match goto end

@@ -33,7 +33,6 @@ exec_once
 vhash
 voba_str
 voba_value
-tests/*.c
 voba_builtin
 voba_compiler
 voba_module

@@ -12,20 +12,22 @@ VOBA_C_SO := $(patsubst tests/%.voba,tests/lib%.so,$(TEST_VOBA_FILES))
 CLEANED_FILES += $(VOBA_C_FILES) $(VOBA_C_SO) build
 all: $(VOBA_C_SO)
 
-VOBA_C_SO_RUN := $(patsubst tests/%.voba,run/%,$(TEST_VOBA_FILES))
+VOBA_C_SO_RUN := $(patsubst tests/%.voba,tests/%,$(TEST_VOBA_FILES))
 $(VOBA_C_FILES): %.c: %.voba
 	bash -x setenv.sh voba_compiler/vobac $< > $@
 $(VOBA_C_FILES): %.c:
 $(VOBA_C_SO): tests/lib%.so: tests/%.o
-	$(CC) -shared -Wl,-soname,$@  -o $@ $<
+	$(CC) $(CFLAGS) -shared -Wl,-soname,$@  -o $@ $<
 $(VOBA_C_O): tests/%.o: tests/%.c
-	$(CC) -c -o $@ -fPIC $(CFLAGS) $<
-$(VOBA_C_SO_RUN): run/% : tests/lib%.so 
-	bash -x setenv.sh ./voba_compiler/voba ./$<
+	$(CC) $(CFLAGS) -c -o $@ -fPIC $(CFLAGS) $<
+$(VOBA_C_SO_RUN): tests/% : tests/lib%.so 
+	bash -x setenv.sh ./voba_compiler/voba $@
 .PHONY: $(VOBA_C_SO_RUN)
 
-test: $(VOBA_C_SO_RUN)
+test: $(VOBA_C_SO_RUN) test_const.sh
 
+test_const.sh:
+	env CFLAGS='$(CFLAGS)' bash -x tests/test_const.sh
 x:
 	echo $(CFLAGS)
 # Local Variables:

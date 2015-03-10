@@ -37,7 +37,7 @@ EOF
 
     
     cat <<EOF > $MYPWD/constant.voba
-(import constant)
+(import ./constant)
 (def x_value $src_voba)
 EOF
     

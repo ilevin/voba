@@ -80,6 +80,9 @@ cd ..
 
 
 
+if [ ! -d voba_builtin ]; then
+    git clone $MY_GIT/voba_builtin.git voba_builtin
+fi
 if [ ! -d voba_compiler ]; then
     git clone $MY_GIT/voba_compiler.git voba_compiler
 fi
@@ -87,9 +90,6 @@ cd voba_compiler
 make &&  make test && make install || exit 1
 cd ..
 
-if [ ! -d voba_builtin ]; then
-    git clone $MY_GIT/voba_builtin.git voba_builtin
-fi
 cd voba_builtin
 make &&  make test && make install || exit 1
 cd ..

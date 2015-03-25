@@ -20,7 +20,6 @@ CFLAGS=$CFLAGS
 LDFLAGS=$LDFLAGS
 EOF
 
-
 set -e
 
 if [ -d /home/git.repository/voba.good ]; then
@@ -79,12 +78,6 @@ make &&  make test && make install || exit 1
 cd ..
 
 
-if [ ! -d voba_builtin ]; then
-    git clone $MY_GIT/voba_builtin.git voba_builtin
-fi
-cd voba_builtin
-make &&  make test && make install || exit 1
-cd ..
 
 
 if [ ! -d voba_compiler ]; then
@@ -94,6 +87,12 @@ cd voba_compiler
 make &&  make test && make install || exit 1
 cd ..
 
+if [ ! -d voba_builtin ]; then
+    git clone $MY_GIT/voba_builtin.git voba_builtin
+fi
+cd voba_builtin
+make &&  make test && make install || exit 1
+cd ..
 
     
 

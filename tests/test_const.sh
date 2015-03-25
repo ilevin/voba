@@ -1,7 +1,6 @@
 #!/bin/bash
 MYPWD=$(dirname $0)
-source ../setenv.sh
-set -e
+source $MYPWD/../setenv.sh
 export CC=${CC:-gcc}
 function process()
 {
@@ -24,7 +23,7 @@ EXEC_ONCE_PROGN{
     voba_value_t expected_value = $src_c
         ;        
     int ok = voba_eq(value,expected_value);
-    printf("$src_voba == $src_c %s.\n", ok?"pass":"fail");
+    printf("$src_voba(0x%lx) == $src_c(0x%lx) %s.\n", value,expected_value,ok?"pass":"fail");
 }
 voba_value_t voba_init(voba_value_t this_module)
 {
@@ -41,14 +40,18 @@ EOF
 (def x_value $src_voba)
 EOF
     
+    if [ -f $MYPWD/constant.c ] ;then
+       rm $MYPWD/constant.c;
+    fi
     if [ -f $MYPWD/constant.o ] ;then
        rm $MYPWD/constant.o;
     fi
     if [ -f $MYPWD/libconstant.so ]; then
         rm $MYPWD/libconstant.so
     fi;
-    make $MYPWD/libconstant.so
-    ../voba_compiler/voba $MYPWD/libtest_constant.so
+    bash setenv.sh voba_compiler/vobac tests/constant.voba > tests/constant.c &&
+    $CC $CFLAGS -fPIC -shared -o $MYPWD/libconstant.so $MYPWD/constant.c
+    $MYPWD/../voba_compiler/voba $MYPWD/test_constant
     
 }
 cat <<EOF | process

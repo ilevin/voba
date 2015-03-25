@@ -2,7 +2,7 @@
 (<< primes 2)
 (def (is-prime x)
      (for :init true
-          :each primes
+          :each (array-iter primes)
           :do ((v |
                   (== (% x v) 0)
                   ;;(eq_i32_mod_0 x v)

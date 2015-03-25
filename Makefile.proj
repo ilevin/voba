@@ -5,7 +5,16 @@ LDFLAGS += -lvoba_value
 LDFLAGS += -lvoba_module
 LDFLAGS += -L$(libdir)
 
-TEST_VOBA_FILES = $(wildcard tests/*.voba)
+
+TEST_VOBA_FILES += tests/and_or.voba
+TEST_VOBA_FILES += tests/array.voba
+TEST_VOBA_FILES += tests/break.voba
+TEST_VOBA_FILES += tests/for.voba
+TEST_VOBA_FILES += tests/generator.voba
+TEST_VOBA_FILES += tests/it.voba
+TEST_VOBA_FILES += tests/match.voba
+TEST_VOBA_FILES += tests/prime.voba
+
 VOBA_C_FILES := $(patsubst %.voba,%.c,$(TEST_VOBA_FILES))
 VOBA_C_O := $(patsubst tests/%.voba,tests/%.o,$(TEST_VOBA_FILES))
 VOBA_C_SO := $(patsubst tests/%.voba,tests/lib%.so,$(TEST_VOBA_FILES))
@@ -14,22 +23,23 @@ all: $(VOBA_C_SO)
 
 VOBA_C_SO_RUN := $(patsubst tests/%.voba,tests/%,$(TEST_VOBA_FILES))
 $(VOBA_C_FILES): %.c: %.voba
-	bash -x setenv.sh voba_compiler/vobac $< > $@
+	bash setenv.sh voba_compiler/vobac $< > $@
 $(VOBA_C_FILES): %.c:
 $(VOBA_C_SO): tests/lib%.so: tests/%.o
 	$(CC) $(CFLAGS) -shared -Wl,-soname,$@  -o $@ $<
 $(VOBA_C_O): tests/%.o: tests/%.c
 	$(CC) $(CFLAGS) -c -o $@ -fPIC $(CFLAGS) $<
 $(VOBA_C_SO_RUN): tests/% : tests/lib%.so 
-	bash -x setenv.sh ./voba_compiler/voba $@
+	bash setenv.sh ./voba_compiler/voba $@
 .PHONY: $(VOBA_C_SO_RUN)
 
 test: $(VOBA_C_SO_RUN) test_const.sh
 
 test_const.sh:
-	env CFLAGS='$(CFLAGS)' bash -x tests/test_const.sh
+	env CFLAGS='$(CFLAGS)' bash tests/test_const.sh
 x:
 	echo $(CFLAGS)
+
 # Local Variables:
 # mode:makefile
 # coding: utf-8-unix

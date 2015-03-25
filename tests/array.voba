@@ -1,2 +1,2 @@
-(for :each ('(1 2 3))
-     :do (v (print v)))
+(for :each (array-iter '(1 2 3))
+     :do (v (print (+ 1 v))))

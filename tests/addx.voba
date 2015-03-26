@@ -1,0 +1,5 @@
+(def (addx x)
+     (fun (y) (+ x y)))
+
+(let ((f (addx 10)))
+  (print (f 10)))

@@ -1,0 +1,7 @@
+(def (mylen1 nil len)
+     len)
+(def (mylen1 (match-box x b) len)
+     (mylen1 b (+ 1 len)))
+(def (mylen x) (mylen1 x 0))
+(print (mylen (array 1 2 3 nil)))
+

@@ -15,6 +15,7 @@ TEST_VOBA_FILES += tests/it.voba
 TEST_VOBA_FILES += tests/match.voba
 TEST_VOBA_FILES += tests/prime.voba
 TEST_VOBA_FILES += tests/addx.voba
+TEST_VOBA_FILES += tests/array_len.voba
 
 VOBA_C_FILES := $(patsubst %.voba,%.c,$(TEST_VOBA_FILES))
 VOBA_C_O := $(patsubst tests/%.voba,tests/%.o,$(TEST_VOBA_FILES))

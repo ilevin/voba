@@ -8,12 +8,14 @@
                   ;;(eq_i32_mod_0 x v)
                   )
                (break false)
-                )))
-(for :each (range 2 10000)
+	       )
+	  (else true)
+	  ))
+(for :each (range 2 100000)
      :do
      ((v | (is-prime v))
       (<< primes v))
-     )
+     (else nil))
 ;(print primes)
 (print (len primes))
 
